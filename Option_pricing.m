@@ -20,18 +20,20 @@ Sb = 110;     % barrier
 [call_BS_European_Price, putBS_European_Price] = BS_european_price(S0, K, T, r, sigma);
 
 % Implement your one-step Monte Carlo pricing procedure for European option
-numSteps = 1;
-numPaths = 1;
+numPaths = 1000;
 [callMC_European_Price_1_step, putMC_European_Price_1_step] = MC_european_price(S0, K, T, r, mu, sigma, 1, numPaths);
-
+numSteps = 50;
 % Implement your multi-step Monte Carlo pricing procedure for European option
 [callMC_European_Price_multi_step, putMC_European_Price_multi_step] = MC_european_price(S0, K, T, r, mu, sigma, numSteps, numPaths);
 
+
 % Implement your one-step Monte Carlo pricing procedure for Barrier option
 % numSteps = 1;
+numPaths = 50000;
 [callMC_Barrier_Knockin_Price_1_step, putMC_Barrier_Knockin_Price_1_step] = ...
-    MC_barrier_knockin_price(S0, Sb, K, T, r, mu, sigma, numSteps, numPaths);
+    MC_barrier_knockin_price(S0, Sb, K, T, r, mu, sigma, 1, numPaths);
 
+numSteps = 50;
 % Implement your multi-step Monte Carlo pricing procedure for Barrier option
 [callMC_Barrier_Knockin_Price_multi_step, putMC_Barrier_Knockin_Price_multi_step] = ...
     MC_barrier_knockin_price(S0, Sb, K, T, r, mu, sigma, numSteps, numPaths);

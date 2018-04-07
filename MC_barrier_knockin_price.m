@@ -9,9 +9,9 @@ function [call_price, put_price ] =  MC_barrier_knockin_price(S0, Sb, K, T, r, m
         inMoney = find(S(:,i) > Sb);
         if length(inMoney) > 0
             barrierPrice_call(i) = max(0, S(end, i) - K);
-            barrierPrice_put(i) = max(0, K - S(end, :));        
+            barrierPrice_put(i) = max(0, K - S(end, i));        
         else
-            barrierPrice_put(i) = 0;
+            barrierPrice_call(i) = 0;
             barrierPrice_put(i) = 0;
         end
     end

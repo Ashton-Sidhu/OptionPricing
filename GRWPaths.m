@@ -3,7 +3,7 @@ function paths = GRWPaths(initPrice, mu, sigma, T, numSteps, numPaths)
 % mu is the annual drift, sigma the annual volatility
 % T is the total length of time for the path (in years)
 % dT is the time increment (in years) paths = zeros(numSteps+1, numPaths);
-
+    paths = zeros(numSteps+1, numPaths);
     dT = T/numSteps; 
 
     % Vector of paths will store realizations of the asset price
