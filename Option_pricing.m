@@ -20,7 +20,8 @@ Sb = 110;     % barrier
 [call_BS_European_Price, putBS_European_Price] = BS_european_price(S0, K, T, r, sigma);
 
 % Implement your one-step Monte Carlo pricing procedure for European option
-% numSteps = 1;
+numSteps = 1;
+numPaths = 1;
 [callMC_European_Price_1_step, putMC_European_Price_1_step] = MC_european_price(S0, K, T, r, mu, sigma, 1, numPaths);
 
 % Implement your multi-step Monte Carlo pricing procedure for European option
